@@ -30,7 +30,7 @@ public class PlayerSpawner : NetworkBehaviour
     {
         if (spawnPoints.Length == 0)
         {
-            Debug.LogError("Nincs beállítva spawn pont a PlayerSpawner-en!");
+            Debug.LogError("No spawn point set on PlayerSpawner!");
             return;
         }
 
