@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (target == null) return;
 
-        // Statikus pozícióból követi a karaktert (nem forog vele a kamera)
+        
         Vector3 desiredPosition = target.position + offset;
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.LookAt(target.position + Vector3.up * 1f);

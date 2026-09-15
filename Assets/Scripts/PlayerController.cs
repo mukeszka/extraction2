@@ -29,7 +29,7 @@ public class PlayerController : NetworkBehaviour
     {
         base.OnStartClient();
 
-        // A kamera csak a saját karakterünket kövesse
+       
         if (IsOwner)
         {
             CameraFollow cam = Camera.main.GetComponent<CameraFollow>();
@@ -37,15 +37,14 @@ public class PlayerController : NetworkBehaviour
         }
         else
         {
-            // Ha nem a mi karakterünk, a Rigidbody-t ne engedjük fizikailag
-            // "harcolni" a hálózati pozíció-szinkronnal
+            
             rb.isKinematic = true;
         }
     }
 
     private void Update()
     {
-        // Csak a saját karakterünkön fusson az input-kezelés
+        
         if (!IsOwner) return;
 
         isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, groundDistance, groundLayer);

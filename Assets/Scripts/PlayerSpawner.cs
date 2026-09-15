@@ -14,7 +14,7 @@ public class PlayerSpawner : NetworkBehaviour
     {
         base.OnStartServer();
 
-        // Amikor egy új kliens csatlakozik, ezt az eseményt hívja meg FishNet
+        
         base.ServerManager.OnRemoteConnectionState += ServerManager_OnRemoteConnectionState;
     }
 
